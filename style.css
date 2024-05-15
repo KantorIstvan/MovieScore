@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  background: rgb(119, 0, 34);
+  background: -moz-linear-gradient(
+    35deg,
+    rgba(119, 0, 34, 1) 0%,
+    rgba(255, 86, 134, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    35deg,
+    rgba(119, 0, 34, 1) 0%,
+    rgba(255, 86, 134, 1) 100%
+  );
+  background: linear-gradient(
+    35deg,
+    rgba(119, 0, 34, 1) 0%,
+    rgba(255, 86, 134, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#770022",endColorstr="#ff5686",GradientType=1);
+  color: #fff;
+}
+
+.question-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio-block {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.radio-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+#questions {
+  background-color: aqua;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+.question {
+  color: #ffc700;
+  font-size: 30px;
+}
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  color: #ccc;
+  font-size: 24px;
+}
+
+input[type="radio"]:checked + label {
+  color: #ffc700;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultText {
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.result {
+  font-size: 150px;
+  text-align: center;
+  margin-bottom: 200px;
+  margin-top: 0;
+}
+#submit {
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  font-weight: 600;
+  color: red;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.5); /* Add this line */
+}
+
+#submit:active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add this line */
+  transform: translateY(3px); /* Add this line */
+}
