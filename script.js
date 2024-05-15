@@ -69,5 +69,5 @@ document.getElementById("submit").addEventListener("click", function (event) {
   result.textContent = totalRating;
   console.log(totalRating);
 
-  window.scrollTo(0, document.body.scrollHeight);
+  document.body.scrollIntoView({ behavior: "smooth", block: "end" });
 });
