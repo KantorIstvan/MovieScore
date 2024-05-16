@@ -76,6 +76,7 @@ h3 {
 .question {
   color: #ffc700;
   font-size: 30px;
+  text-align: center;
 }
 input[type="radio"] {
   display: none;
