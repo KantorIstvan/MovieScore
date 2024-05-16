@@ -47,9 +47,11 @@ body {
   justify-content: center;
 }
 h1 {
+  font-size: 100px;
   text-align: center;
 }
 h2 {
+  font-size: 4dvb;
   text-align: center;
 }
 h3 {
@@ -93,6 +95,8 @@ input[type="radio"]:checked + label {
   flex-direction: column;
   align-items: center;
 }
+
+.radio-block input[type="radio"]:hover ~ input[type="radio"] + label,
 .resultText {
   font-size: 100px;
   text-align: center;

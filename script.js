@@ -50,12 +50,86 @@ for (let i = 0; i < questionNames.length; i++) {
 
 document.getElementById("questions").innerHTML = html;
 
+let labels = document.querySelectorAll("label");
+let clickedIndex = -1;
+
+labels.forEach((label, index) => {
+  // Add hover event listener
+  label.addEventListener("mouseover", function () {
+    let groupIndex = Math.floor(index / 10);
+    let withinGroupIndex = index % 10;
+    for (
+      let i = groupIndex * 10;
+      i <= withinGroupIndex + groupIndex * 10;
+      i++
+    ) {
+      labels[i].style.color = "yellow";
+    }
+  });
+
+  // Add click event listener
+  label.addEventListener("click", function () {
+    clickedIndex = index;
+    let groupIndex = Math.floor(index / 10);
+    let withinGroupIndex = index % 10;
+    for (
+      let i = groupIndex * 10;
+      i <= withinGroupIndex + groupIndex * 10;
+      i++
+    ) {
+      labels[i].style.color = "yellow";
+    }
+  });
+
+  // Modify mouseout event listener to not remove highlight if label has been clicked
+  label.addEventListener("mouseout", function () {
+    if (index <= clickedIndex) {
+      return;
+    }
+    let groupIndex = Math.floor(index / 10);
+    let withinGroupIndex = index % 10;
+    for (
+      let i = groupIndex * 10;
+      i <= withinGroupIndex + groupIndex * 10;
+      i++
+    ) {
+      labels[i].style.color = "";
+    }
+  });
+});
+
 let radios = document.querySelectorAll('input[type="radio"]');
 
 radios.forEach((radio, index) => {
   radio.addEventListener("change", function () {
     ratings[Math.floor(index / 10)] =
       parseInt(radio.value, 10) * multipliers[Math.floor(index / 10)];
+  });
+
+  // Add hover event listener
+  radio.addEventListener("mouseover", function () {
+    let groupIndex = Math.floor(index / 10);
+    let withinGroupIndex = index % 10;
+    for (
+      let i = groupIndex * 10;
+      i <= withinGroupIndex + groupIndex * 10;
+      i++
+    ) {
+      radios[i].nextElementSibling.style.color = "yellow";
+    }
+  });
+
+  // Add mouseout event listener to remove highlight
+  radio.addEventListener("mouseout", function () {
+    let groupIndex = Math.floor(index / 10);
+    let withinGroupIndex = index % 10;
+    for (
+      let i = groupIndex * 10;
+      i <= withinGroupIndex + groupIndex * 10;
+      i++
+    ) {
+      radios[i].nextElementSibling.style.color = "";
+    }
   });
 });
 
